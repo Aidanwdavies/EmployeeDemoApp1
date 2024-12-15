@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EmployeeDemoApp.Inventory"
+             Title="Inventory"
+             x:Name="InventoryPage">
+    <ScrollView>
+        <StackLayout BackgroundColor="DimGray">
+        <!-- Oil Section -->
+        <StackLayout BindableLayout.ItemsSource="{Binding OilItems}">
+            <BindableLayout.ItemTemplate>
+                <DataTemplate>
+                    <StackLayout Padding="50">
+                        <Label Text="{Binding Name}" FontSize="Title" />
+                        <Label Text="{Binding Stock}" FontSize="Subtitle" />
+                        <Entry Placeholder="Enter new stock" Text="{Binding NewStock}" Keyboard="Numeric"/>
+                        <Button Text="Update Stock" 
+                                Command="{Binding BindingContext.UpdateStockCommand, 
+                            Source={x:Reference InventoryPage}}" 
+                                CommandParameter="{Binding .}" />
+                    </StackLayout>
+                </DataTemplate>
+            </BindableLayout.ItemTemplate>
+        </StackLayout>
+
+        <!-- Tires Section (Similar structure as Oil Section) -->
+        <StackLayout BindableLayout.ItemsSource="{Binding TiresItems}">
+            <BindableLayout.ItemTemplate>
+                <DataTemplate>
+                    <StackLayout Padding="50">
+                        <Label Text="{Binding Name}" FontSize="Title" />
+                        <Label Text="{Binding Stock}" FontSize="Subtitle" />
+                        <Entry Placeholder="Enter new stock" Text="{Binding NewStock}" Keyboard="Numeric" />
+                        <Button Text="Update Stock" Command="{Binding BindingContext.UpdateStockCommand, Source={x:Reference InventoryPage}}" CommandParameter="{Binding .}" />
+                    </StackLayout>
+                </DataTemplate>
+            </BindableLayout.ItemTemplate>
+        </StackLayout>
+
+        <!-- Air Filters Section (Similar structure as Oil Section) -->
+        <StackLayout BindableLayout.ItemsSource="{Binding AirFiltersItems}">
+            <BindableLayout.ItemTemplate>
+                <DataTemplate>
+                    <StackLayout Padding="50">
+                        <Label Text="{Binding Name}" FontSize="Title" />
+                        <Label Text="{Binding Stock}" FontSize="Subtitle" />
+                        <Entry Placeholder="Enter new stock" Text="{Binding NewStock}" Keyboard="Numeric" />
+                        <Button Text="Update Stock" Command="{Binding BindingContext.UpdateStockCommand, Source={x:Reference InventoryPage}}" CommandParameter="{Binding .}" />
+                    </StackLayout>
+                </DataTemplate>
+            </BindableLayout.ItemTemplate>
+        </StackLayout>
+
+        <StackLayout BindableLayout.ItemsSource="{Binding WindshieldItems}">
+            <BindableLayout.ItemTemplate>
+                <DataTemplate>
+                    <StackLayout Padding="50">
+                        <Label Text="{Binding Name}" FontSize="Title" />
+                        <Label Text="{Binding Stock}" FontSize="Subtitle" />
+                        <Entry Placeholder="Enter new stock" Text="{Binding NewStock}" Keyboard="Numeric" />
+                        <Button Text="Update Stock" Command="{Binding BindingContext.UpdateStockCommand, Source={x:Reference InventoryPage}}" CommandParameter="{Binding .}" />
+                    </StackLayout>
+                </DataTemplate>
+            </BindableLayout.ItemTemplate>
+        </StackLayout>
+
+        <StackLayout BindableLayout.ItemsSource="{Binding ExhaustItems}">
+            <BindableLayout.ItemTemplate>
+                <DataTemplate>
+                    <StackLayout Padding="50">
+                        <Label Text="{Binding Name}" FontSize="Title" />
+                        <Label Text="{Binding Stock}" FontSize="Subtitle" />
+                        <Entry Placeholder="Enter new stock" Text="{Binding NewStock}" Keyboard="Numeric" />
+                        <Button Text="Update Stock" Command="{Binding BindingContext.UpdateStockCommand, Source={x:Reference InventoryPage}}" CommandParameter="{Binding .}" />
+                    </StackLayout>
+                </DataTemplate>
+            </BindableLayout.ItemTemplate>
+        </StackLayout>
+
+        <StackLayout BindableLayout.ItemsSource="{Binding StereoItems}">
+            <BindableLayout.ItemTemplate>
+                <DataTemplate>
+                    <StackLayout Padding="50">
+                        <Label Text="{Binding Name}" FontSize="Title" />
+                        <Label Text="{Binding Stock}" FontSize="Subtitle" />
+                        <Entry Placeholder="Enter new stock" Text="{Binding NewStock}" Keyboard="Numeric" />
+                        <Button Text="Update Stock" Command="{Binding BindingContext.UpdateStockCommand, Source={x:Reference InventoryPage}}" CommandParameter="{Binding .}" />
+                    </StackLayout>
+                </DataTemplate>
+            </BindableLayout.ItemTemplate>
+        </StackLayout>
+    </StackLayout>
+    </ScrollView>
+</ContentPage>

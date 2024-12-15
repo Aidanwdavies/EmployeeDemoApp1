@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EmployeeDemoApp.CustomerPage"
+             Title="Customers">
+    <ScrollView>
+        <StackLayout Padding="10" BackgroundColor="DimGray">
+
+
+            <Frame Margin="10" Padding="1" BorderColor="Black" CornerRadius="5" HasShadow="True">
+                <!-- Customer Grid Section -->
+                <Grid x:Name="CustomersGrid" Margin="10" BackgroundColor="LightGray">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <!-- Add more RowDefinitions as needed -->
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="50" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="2*" />
+                    </Grid.ColumnDefinitions>
+
+                    <!-- Grid Headers -->
+                    <Label Text="ID" Grid.Row="0" Grid.Column="0" TextColor="DarkBlue"/>
+                    <Label Text="Name" Grid.Row="0" Grid.Column="1" TextColor="DarkBlue"/>
+                    <Label Text="Service" Grid.Row="0" Grid.Column="2" TextColor="DarkBlue"/>
+                    <!-- Data rows will be added here in the code-behind -->
+                </Grid>
+            </Frame>
+            <!-- Customer List Section -->
+            <CollectionView x:Name="CustomersCollectionView" ItemsSource="{Binding DisplayedCustomers}">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout Orientation="Horizontal" Padding="10">
+                            <Label Text="{Binding Id}" WidthRequest="50" TextColor="Black" />
+                            <Label Text="{Binding Name}" WidthRequest="150" TextColor="Black"/>
+                            <Label Text="{Binding Service}" WidthRequest="100" TextColor="Black"/>
+                            <!-- Add more fields as needed -->
+                        </StackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+            
+            <!-- Add Customer Section -->
+            <Frame Margin="10" Padding="10" CornerRadius="10">
+                <StackLayout Spacing="10">
+                    <Label Text="Add Customer" FontSize="Medium" />
+                    <Entry x:Name="addCustomerIdEntry" Placeholder="ID" Keyboard="Numeric"/>
+                    <Entry x:Name="addCustomerNameEntry" Placeholder="Name"/>
+                    <Entry x:Name="addCustomerServiceEntry" Placeholder="Service"/>
+                    <Button Text="Add" Clicked="AddButton_Clicked"/>
+                </StackLayout>
+            </Frame>
+
+            <!-- Find Customer Section -->
+            <Frame Margin="10" Padding="10" CornerRadius="10">
+                <StackLayout Spacing="10">
+                    <Label Text="Find Customer" FontSize="Medium" />
+                    <Entry x:Name="findCustomerIdEntry" Placeholder="ID" Keyboard="Numeric"/>
+                    <Entry x:Name="findCustomerNameEntry" Placeholder="Name"/>
+                    <Entry x:Name="findCustomerServiceEntry" Placeholder="Service"/>
+                    <Button Text="Find" Clicked="FindButton_Clicked"/>
+                </StackLayout>
+            </Frame>
+
+            
+
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

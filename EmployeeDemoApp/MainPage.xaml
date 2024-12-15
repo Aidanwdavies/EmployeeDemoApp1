@@ -1,0 +1,111 @@
+﻿<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EmployeeDemoApp.MainPage">
+
+    <Grid>
+
+        <!--<grid backgroundcolor="#2196f3" padding="10" verticaloptions="start">
+            <stacklayout orientation="horizontal" spacing="10">
+                <button text="home" textcolor="white" clicked="home_clicked" />
+                <button text="info" textcolor="white" clicked="info_clicked" />
+
+            </stacklayout>
+        </grid>-->
+
+
+
+        <ScrollView>
+            <Grid Margin="10" BackgroundColor="Black">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="350" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="1*" />
+                </Grid.ColumnDefinitions>
+
+                <!-- Listview -->
+                <ListView ItemsSource="{Binding DisplayedEmployees}" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2">
+                    <!-- Header Row -->
+                    <ListView.Header>
+                        <Grid BackgroundColor="LightGray">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="100" />
+                                <ColumnDefinition Width="150" />
+                                <ColumnDefinition Width="75" />
+                            </Grid.ColumnDefinitions>
+                            <Label Grid.Column="0" Text="ID" FontSize="16" Padding="15" TextColor="Black"/>
+                            <Label Grid.Column="1" Text="Name" FontSize="16" Padding="15" TextColor="Black"/>
+                            <Label Grid.Column="2" Text="Active" FontSize="16" Padding="15" TextColor="Black"/>
+                        </Grid>
+                    </ListView.Header>
+                    <!-- Data Template -->
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="100" />
+                                        <ColumnDefinition Width="150" />
+                                        <ColumnDefinition Width="75" />
+                                    </Grid.ColumnDefinitions>
+                                    <Label Grid.Column="0" Text="{Binding Id}" Padding="15" TextColor="DarkBlue"/>
+                                    <Label Grid.Column="1" Text="{Binding Name}" Padding="15" TextColor="DarkBlue"/>
+                                    <Label Grid.Column="2" Text="{Binding IsActive}" Padding="15" TextColor="DarkBlue"/>
+                                </Grid>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+
+                <!-- Find Employee Section -->
+                <StackLayout Padding="20" Grid.Row="1" Grid.Column="0">
+                    <Label FontSize="Title" Margin="0,10,0,10" TextColor="Black">Find Employee</Label>
+                    <Entry x:Name="findEmployeeIdEntry" Placeholder="Employee ID" Margin="0,10,0,10" Keyboard="Numeric" TextColor="Black" BackgroundColor="White"/>
+                    <Entry x:Name="findEmployeeNameEntry" Placeholder="Employee Name" Margin="0,10,0,10" TextColor="Black" BackgroundColor="White"/>
+                    <Picker x:Name="findEmployeeStatusPicker" Title="Select Status" Margin="0,10,0,10" ItemsSource="{Binding FindStatuses}" SelectedIndex="0" />
+                    <Button Text="Find" Margin="0,10,0,10" Clicked="FindButton_Clicked" BackgroundColor="LightSlateGray" TextColor="White" />
+                </StackLayout>
+
+                <!-- Add Employee Section -->
+                <StackLayout Padding="20" Grid.Row="1" Grid.Column="1">
+                    <Label FontSize="Title" Margin="0,10,0,10" TextColor="Black">Add Employee</Label>
+                    <Entry x:Name="addEmployeeIdEntry" Placeholder="Employee ID" Margin="0,10,0,10" Keyboard="Numeric" TextColor="Black" BackgroundColor="White"/>
+                    <Entry x:Name="addEmployeeNameEntry" Placeholder="Employee Name" Margin="0,10,0,10" TextColor="Black" BackgroundColor="White"/>
+                    <Picker x:Name="addEmployeeStatusPicker" Title="Select Status" Margin="0,10,0,10" ItemsSource="{Binding AddStatuses}" SelectedIndex="0" />
+                    <Button Text="Add" Margin="0,10,0,10" Clicked="AddButton_Clicked" BackgroundColor="DarkRed" TextColor="White" />
+                </StackLayout>
+
+                <!-- GridView -->
+                <CollectionView ItemsSource="{Binding DisplayedEmployees}" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2">
+                    <CollectionView.ItemsLayout>
+                        <GridItemsLayout Orientation="Vertical" Span="2" />
+                    </CollectionView.ItemsLayout>
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Grid Padding="10" BackgroundColor="#EFEFEF">
+                                <Label Text="{Binding Id}" FontSize="16" />
+                                <Label Text="{Binding Name}" FontSize="16" />
+                                <Label Text="{Binding IsActive}" FontSize="16" />
+                            </Grid>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+
+
+                <StackLayout Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2">
+                    <Label Text="Welcome to Employee App" FontSize="Title" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" />
+
+                    <!-- Additional UI Elements -->
+                    <Entry x:Name="yourNameEntry" Placeholder="Enter your name" />
+                    <Button Text="Submit" Clicked="SubmitButton_Clicked" />
+                </StackLayout>
+            </Grid>
+        </ScrollView>
+    </Grid>
+    
+</ContentPage>

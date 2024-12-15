@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EmployeeDemoApp.Dashboard"
+             Title="Dashboard">
+    <ScrollView>
+        <VerticalStackLayout Spacing="20" Padding="30" BackgroundColor="DimGray">
+
+            <Label Text="Dashboard" FontSize="Large"/>
+
+            <!-- Quick Actions -->
+            <HorizontalStackLayout>
+                <Button Text="New Appointment" HorizontalOptions="Start" Clicked="NewAppointment_Clicked"/>
+                <Button Text="New Service" HorizontalOptions="Start" Clicked="NewService_Clicked"/>
+                <!-- Other quick action buttons -->
+            </HorizontalStackLayout>
+
+            <!-- Appointments Summary -->
+            <Frame CornerRadius="10" Padding="10">
+                <StackLayout>
+                    <Label Text="Today's Appointments" FontAttributes="Bold"/>
+                    <!-- Insert list or summary of appointments -->
+                </StackLayout>
+            </Frame>
+
+            <!-- Service Queue -->
+            <Frame CornerRadius="10" Padding="10">
+                <StackLayout>
+                    <Label Text="Service Queue" FontAttributes="Bold"/>
+                    <!-- Insert list or counter for service queue -->
+                </StackLayout>
+            </Frame>
+
+            <!-- Inventory Alerts -->
+            <Frame CornerRadius="10" Padding="10">
+                <StackLayout>
+                    <Label Text="Inventory Alerts" FontAttributes="Bold"/>
+                    <!-- Insert notifications for low inventory -->
+                </StackLayout>
+            </Frame>
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

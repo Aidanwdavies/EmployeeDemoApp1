@@ -1,0 +1,24 @@
+﻿<?xml version = "1.0" encoding = "UTF-8" ?>
+<Application xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:EmployeeDemoApp"
+             x:Class="EmployeeDemoApp.App">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Resources/Styles/Colors.xaml" />
+                <ResourceDictionary Source="Resources/Styles/Styles.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+            <Color x:Key="LightCream">#FFFDD0</Color>
+            <Color x:Key="AntiqueWhite">#FAEBD7</Color>
+
+            <!-- Brown Colors -->
+            <Color x:Key="SandyBrown">#F4A460</Color>
+            <Color x:Key="Chocolate">#D2691E</Color>
+
+            <!-- Lavender Colors -->
+            <Color x:Key="LavenderBlush">#FFF0F5</Color>
+            <Color x:Key="MediumLavender">#9370DB</Color>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>
