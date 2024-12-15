@@ -3,7 +3,8 @@ using EmployeeDemoApp.Exceptions;
 using Microsoft.Data.Sqlite;
 using System;
 using System.Collections.Generic;
-
+// Author: [Aidan Davies, Kaifang Wang]
+// Date: [Dec 15th, 2024]
 // Alias for Employee class to resolve naming conflict
 using AppEmployee = EmployeeDemoApp.Employee;
 using AppCustomer = EmployeeDemoApp.Customer;

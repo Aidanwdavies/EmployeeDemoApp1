@@ -1,5 +1,8 @@
 ﻿using Microsoft.Extensions.Logging;
 
+// Author: [Aidan Davies, Kaifang Wang]
+// Date: [Dec 15th, 2024]
+
 namespace EmployeeDemoApp
 {
     public static class MauiProgram

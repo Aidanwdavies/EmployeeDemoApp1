@@ -4,6 +4,9 @@ using System.Diagnostics;
 using System.Text.Json;
 using System.Xml.Linq;
 
+// Author: [Aidan Davies, Kaifang Wang]
+// Date: [Dec 15th, 2024]
+
 namespace EmployeeDemoApp
 {
     public partial class MainPage : ContentPage

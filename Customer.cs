@@ -1,4 +1,6 @@
 ﻿using System;
+// Author: [Aidan Davies, Kaifang Wang]
+// Date: [Dec 15th, 2024]
 
 public class Customer
 {

@@ -1,3 +1,6 @@
+// Author: [Aidan Davies, Kaifang Wang]
+// Date: [Dec 15th, 2024]
+
 using EmployeeDemoApp.Database; // Assuming the namespace is correct and database setup is similar
 using System.Collections.ObjectModel;
 

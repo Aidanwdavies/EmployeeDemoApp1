@@ -8,6 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 
+// Author: [Aidan Davies, Kaifang Wang]
+// Date: [Dec 15th, 2024]
+
 public class InventoryViewModel : BaseViewModel
 {
 	public ObservableCollection<InventoryItemViewModel> OilItems { get; set; }
